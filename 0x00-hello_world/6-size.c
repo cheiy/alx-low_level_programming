@@ -4,7 +4,7 @@
  * main - Prints out the sizes of the various types on the computer it is
  * compiled and run on.
  *
- * Description: Prints out the sizes of the varioys types on the computer
+ * Description: Prints out the sizes of the various types on the computer
  * it is compiled and run on.
  *
  * Return: 0 if it runs successfully.
