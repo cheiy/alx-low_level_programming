@@ -9,12 +9,11 @@
  * Return: 1 if successful
  */
 
-#define STDOUT_FILENO 2
 
 int main(void)
 {
-	printf("and that piece of art is useful\"");
-	printf("- Dora Korpar, 2015-10-19\n");
+	fwrite("and that piece of art is useful\" \
+- Dora Korpar, 2015-10-19\n", 60, 1, stderr);
 
 	return (1);
 }
