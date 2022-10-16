@@ -19,8 +19,8 @@ int main(void)
 		putchar(count);
 		if (count != 57)
 		{
-			putchar(32);
 			putchar(44);
+			putchar(32);
 		}
 		count++;
 	}
