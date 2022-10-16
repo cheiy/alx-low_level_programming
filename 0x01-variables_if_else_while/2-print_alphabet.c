@@ -13,7 +13,7 @@ int main(void)
 	char x[] = "abcdefghijklmnopqrstuvwxyz";
 	int count = 0;
 
-	while (count < 27)
+	while (count < 26)
 	{
 		putchar(x[count]);
 		count++;
