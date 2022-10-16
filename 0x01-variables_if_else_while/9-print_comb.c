@@ -27,8 +27,6 @@ int main(void)
 		}
 		count2 = 49;
 		count1++;
-		
 	}
 	return (0);
 }
-
