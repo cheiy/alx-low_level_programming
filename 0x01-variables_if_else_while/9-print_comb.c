@@ -10,23 +10,20 @@
  */
 int main(void)
 {
-	int count1, count2;
+	int count;
 
-	count1 = 48;
-	count2 = 49;
+	count = 48;
 
-	while (count1 <= 57)
+	while (count <= 57)
 	{
-		while (count2 <= 57)
+		putchar(count);
+		if (count != 57)
 		{
-			putchar(count1);
-			putchar(count2);
-			putchar(44);
 			putchar(32);
-			count2++;
+			putchar(44);
 		}
-		count2 = 49;
-		count1++;
+		count++;
 	}
+	putchar('\n');
 	return (0);
 }
