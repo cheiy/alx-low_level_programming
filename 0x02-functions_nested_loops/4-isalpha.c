@@ -19,17 +19,17 @@ int _isalpha(int c)
 		{
 			a = 1;
 		}
-	}
-	else if ((unsigned char)(c) >= 97)
-	{
-		if ((unsigned char)(c) <= 122)
+		else if ((unsigned char)(c) >= 97)
 		{
-			a = 1;
+			if ((unsigned char)(c) <= 122)
+			{
+				a = 1;
+			}
 		}
-	}
-	else
-	{
-		a = 0;
+		else
+		{
+			a = 0;
+		}
 	}
 
 	return (a);
