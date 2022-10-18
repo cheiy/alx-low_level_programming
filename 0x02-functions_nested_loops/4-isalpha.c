@@ -9,31 +9,35 @@
  * Return: 0 if alphanumeric, 1 otherwise.
  *
  */
-int _isalpha(char c)
+int _isalpha(int c)
 {
+	int a;
 	if ((unsigned char)(c) >= 48)
 	{
 		if ((unsigned char)(c) <= 57)
 		{
-			return (1);
+			a = 1;		
 		}
 	}
 	else if ((unsigned char)(c) >= 65)
 	{
 		if ((unsigned char)(c) <= 90)
 		{
-			return (1);
+			a = 1;
 		}
 	}
 	else if ((unsigned char)(c) >= 97)
 	{
 		if ((unsigned char)(c) <= 122)
 		{
-			return (1);
+			a = 1;
 		}
 	}
 	else
 	{
-		return (0);
+		a = 0;
 	}
+
+	return (a);
+
 }
