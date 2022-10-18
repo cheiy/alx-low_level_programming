@@ -11,9 +11,13 @@ void jack_bauer(void)
 {
 	int loop1;
 	int loop2;
+	int loop3;
+	int loop4;
 
 	loop1 = 48;
 	loop2 = 48;
+	loop3 = 48;
+	loop4 = 48;
 	while (loop1 < 50)
 	{
 		while (loop2 < 51)
