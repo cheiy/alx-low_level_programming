@@ -11,8 +11,18 @@
 int print_last_digit(int num)
 {
 	int last_digit;
+	int abs_num;
 
-	last_digit = _abs(num) % 10;
+	if (num < 0)
+	{
+		abs_num = num * -1;
+	}
+	else if (num >= 0)
+	{
+		abs_num = num;
+	}
+
+	last_digit = abs_num % 10;
 
 	return (last_digit);
 }
