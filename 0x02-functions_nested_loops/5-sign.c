@@ -26,6 +26,7 @@ int print_sign(int n)
 	else
 	{
 		retval = 0;
+		_putchar(48);
 	}
 
 	return (retval);
