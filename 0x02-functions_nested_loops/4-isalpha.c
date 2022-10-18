@@ -1,26 +1,17 @@
 #include "main.h"
 /**
- * _isalpha - checks whether character is alphanumeric
+ * _isalpha - checks whether character is an alphabet
  * @c: character we are checking
  *
  * Description: function checks whether character
- * entered is a letter or digit
+ * entered is a letter (lowercase or uppercase)
  *
- * Return: 0 if alphanumeric, 1 otherwise.
+ * Return: 1 if alphanumeric, 0 otherwise.
  *
  */
 int _isalpha(int c)
 {
 	int a;
-	/*
-	 * if ((unsigned char)(c) >= 48)
-	{
-		if ((unsigned char)(c) <= 57)
-		{
-			a = 1;
-		}
-	}
-	*/
 	if ((unsigned char)(c) >= 65)
 	{
 		if ((unsigned char)(c) <= 90)
