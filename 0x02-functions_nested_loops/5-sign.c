@@ -16,12 +16,12 @@ int print_sign(int n)
 	if (n > (unsigned char)(48))
 	{
 		retval = +1;
-		_putchar(45);
+		_putchar(43);
 	}
 	else if (n < (unsigned char)(0))
 	{
 		retval = -1;
-		_putchar(43);
+		_putchar(45);
 	}
 	else
 	{
