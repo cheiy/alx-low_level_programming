@@ -14,17 +14,17 @@ void jack_bauer(void)
 	int loop3;
 	int loop4;
 
-	loop1 = 48;
-	loop2 = 48;
-	loop3 = 48;
-	loop4 = 48;
-	while (loop1 < 50)
+	loop1 = 0;
+	loop2 = 0;
+	loop3 = 0;
+	loop4 = 0;
+	while (loop1 < 3)
 	{
-		while (loop2 < 51)
+		while (loop2 < 4)
 		{
-			while (loop3 < 53)
+			while (loop3 < 6)
 			{
-				while (loop4 < 57)
+				while (loop4 < 9)
 				{
 					_putchar(loop1);
 					_putchar(loop2);
@@ -32,17 +32,17 @@ void jack_bauer(void)
 					_putchar(loop4);
 					loop4++;
 				}
-				loop4 = 48;
+				loop4 = 0;
 				loop3++;
 			}
-			loop4 = 48;
-			loop4 = 48;
+			loop4 = 0;
+			loop3 = 0;
 			loop2++;
 			_putchar(58);
 		}
-		loop4 = 48;
-		loop3 = 48;
-		loop2 = 48;
+		loop4 = 0;
+		loop3 = 0;
+		loop2 = ;
 		loop1++;
 	}
 
