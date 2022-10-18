@@ -12,6 +12,7 @@
 int _isalpha(int c)
 {
 	int a;
+
 	if ((unsigned char)(c) >= 65)
 	{
 		if ((unsigned char)(c) <= 90)
