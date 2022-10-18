@@ -13,18 +13,18 @@ int print_sign(int n)
 {
 	int retval;
 
-	if (n > 0)
+	if (n > (unsigned char)(48))
 	{
-		retval = 1;
+		retval = +1;
 	}
-	else if (n < 0)
+	else if (n < (unsigned char)(0))
 	{
-		retval = 0;
+		retval = -1;
 	}
 	else
 	{
 		retval = 0;
 	}
 
-	return retval;
+	return (retval);
 }
