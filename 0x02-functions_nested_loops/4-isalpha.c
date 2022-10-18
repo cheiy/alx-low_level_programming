@@ -31,6 +31,10 @@ int _isalpha(int c)
 			a = 0;
 		}
 	}
+	else
+	{
+		a = 0;
+	}
 
 	return (a);
 
