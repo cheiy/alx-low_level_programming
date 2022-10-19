@@ -21,7 +21,7 @@ void jack_bauer(void)
 	loop1 = loop2 = loop3 = loop4 = 0;
 	while (loop1 < 2)
 	{
-		while (loop2 < 10)
+		while (loop2 < 24)
 		{
 			while (loop3 < 6)
 			{
