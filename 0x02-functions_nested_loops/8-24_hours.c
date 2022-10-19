@@ -44,6 +44,7 @@ void jack_bauer(void)
 		loop4 = 0;
 		loop3 = 0;
 		loop2 = 11;
+		loop2--;
 		loop1++;
 	}
 
