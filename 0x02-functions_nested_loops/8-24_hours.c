@@ -18,8 +18,8 @@ void jack_bauer(void)
 
 
 	loop1 = loop2 = loop3 = loop4 = 0;
-	while (loop1 < 4)
-	{
+	/*while (loop1 < 4)
+	{*/
 		while (loop2 < 10)
 		{
 			while (loop3 < 6)
@@ -41,15 +41,12 @@ void jack_bauer(void)
 			loop3 = 0;
 			loop2++;
 		}
-		loop4 = 0;
+		/*loop4 = 0;
 		loop3 = 0;
 		loop2 = 0;
-		if(loop1 == 2 && loop2 == 3)
-		{	
-			break;
 		}
 				
 		loop1++;
-	}
+	}*/
 
 }
