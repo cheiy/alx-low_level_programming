@@ -44,7 +44,7 @@ void jack_bauer(void)
 		loop4 = 0;
 		loop3 = 0;
 		loop2 = 0;
-		if(loop1 == 2) && if (loop2 == 3)
+		if(loop1 == 2 && loop2 == 3)
 		{	
 			break;
 		}
