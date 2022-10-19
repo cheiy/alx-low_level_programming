@@ -24,7 +24,7 @@ void jack_bauer(void)
 		{
 			while (loop3 < 6)
 			{
-				while (loop4 < 9)
+				while (loop4 < 10)
 				{
 					_putchar(hours_1[loop1]);
 					_putchar(hours_2[loop2]);
