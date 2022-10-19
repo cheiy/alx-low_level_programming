@@ -12,7 +12,7 @@ void jack_bauer(void)
 	int loop1, loop2, loop3, loop4;
 
 	int hours_1[] = {48, 49, 50};
-	int hours_2[] = {48, 49, 50, 51, 52, 53, 54, 55, 56, 57};
+	int hours_2[] = {48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 48, 49, 50, 51};
 	int minutes_1[] = {48, 49, 50, 51, 52, 53};
 	int minutes_2[] = {48, 49, 50, 51, 52, 53, 54, 55, 56, 57};
 
@@ -44,7 +44,6 @@ void jack_bauer(void)
 		loop4 = 0;
 		loop3 = 0;
 		loop2 = 11;
-		loop2--;
 		loop1++;
 	}
 
