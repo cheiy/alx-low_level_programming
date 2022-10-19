@@ -9,7 +9,7 @@
  * Return: returns 0 always
  *
  */
-int add(int1, int2)
+int add(int int1, int int2)
 {
 	int res;
 
