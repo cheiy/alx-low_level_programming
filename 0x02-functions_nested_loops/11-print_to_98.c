@@ -16,33 +16,33 @@ void print_to_98(int n)
 {
 	if (n == 98)
 	{
-	
-		printf("%d \n",n);
+		printf("%d\n", n);
 	}
 
 	else if (n >= 98)
 	{
 		int loop = n;
+
 		while (loop >= 98)
 		{
-			
 			printf("%d", loop);
-			if(loop != 98)
+			if (loop != 98)
 			{
-				printf(", "); 
+				printf(", ");
 			}
 
-			loop--;	
+			loop--;
 		}
 		printf("\n");
 	}
 	else
 	{
 		int loop2 = n;
+
 		while (loop2 <= 98)
 		{
 			printf("%d", loop2);
-			if(loop2 != 98)
+			if (loop2 != 98)
 			{
 				printf(", ");
 			}
