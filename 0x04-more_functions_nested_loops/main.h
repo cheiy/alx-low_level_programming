@@ -12,4 +12,8 @@ int convert_day(int m, int d);
 void print_remaining_days(int m, int d, int y);
 
 int _isupper(int c);
+
+int _isdigit(int c);
+
+
 #endif /* MAIN_H */
