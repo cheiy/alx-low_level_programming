@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - prints the Fizz-Buzz
@@ -23,11 +24,15 @@ int main(void)
 		}
 		else if (i % 5 == 0)
 		{
-			printf("%s ", "Buzz");
-		}
-		else if (i == 100)
-		{
-			printf("%d", i);
+			if (i == 100)
+			{
+				printf("%s", "Buzz");
+			}
+			else
+			{
+				printf("%s ", "Buzz");
+			}
+
 		}
 		else
 		{
