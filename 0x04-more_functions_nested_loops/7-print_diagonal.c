@@ -1,22 +1,38 @@
 #include "main.h"
 /**
- * print_diagonal - prints a diagonal line on the terminal
- * @n: Number of characters to use
+ * print_diagonal - Prints a diagonal line
+ * @size: base of the 'virtual triangle'
  *
- * Description: Prints a diagonal line on the terminal
+ * Description: Prints a diagonal line  when given a size
+ * which will be base.
  *
- * Return: void
+ * Return: nothing
  */
-void print_diagonal(int n)
+void print_diagonal(int size)
 {
-	int i = 0;
+	int b;
+	int i;
+	int base;
+	int height;
 
-	while (i < n)
+	height = size;
+	base = 0;
+
+	if (size <= 0)
 	{
-		_putchar(92);
 		_putchar('\n');
-		_putchar(' ');
-		i++;
 	}
-	_putchar('\n');
+	else
+	{
+		for (i = height; i > 0; i--)
+		{
+			base++;
+			for (b = 0; b < base ; b++)
+			{
+				_putchar(' ');
+			}
+			_putchar(92);
+			_putchar('\n');
+		}
+	}
 }
