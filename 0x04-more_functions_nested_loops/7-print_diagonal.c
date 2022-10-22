@@ -26,13 +26,16 @@ void print_diagonal(int n)
 	{
 		for (i = height; i > 0; i--)
 		{
+			/*_putchar(92);*/
 			base++;
-			for (b = 0; b < base ; b++)
+			/*_putchar('\n');*/
+			for (b = 1 ; b < base ; b++)
 			{
-				_putchar(' ');
+				_putchar(32);
 			}
 			_putchar(92);
 			_putchar('\n');
 		}
+
 	}
 }
