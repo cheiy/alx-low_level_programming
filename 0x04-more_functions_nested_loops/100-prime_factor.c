@@ -20,8 +20,6 @@ int main(void)
 
 	long int num = 612852475143;
 
-	printf("Prime Numbers are: -\n");
-
 	for (i = 2; i <= num / 2; i++)
 	{
 		divisors = 0;
