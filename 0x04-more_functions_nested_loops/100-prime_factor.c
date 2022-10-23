@@ -15,6 +15,7 @@ int main(void)
 	long int i;
 	int divisors;
 	int j;
+	long int largest_prime_number;
 	long int largest_prime_factor;
 
 	long int num = 612852475143;
@@ -33,7 +34,12 @@ int main(void)
 		}
 		if (divisors == 2)
 		{
-			largest_prime_factor = i;
+			largest_prime_number = i;
+			if (num % largest_prime_number == 0)
+			{
+				largest_prime_factor = largest_prime_number;
+			}
+
 		}
 	}
 	printf("%ld\n", largest_prime_factor);
