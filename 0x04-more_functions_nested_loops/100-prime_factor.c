@@ -19,6 +19,8 @@ int main(void)
 
 	long int num = 612852475143;
 
+	printf("Prime Numbers are: -\n");
+
 	for (i = 2; i <= num / 2; i++)
 	{
 		divisors = 0;
@@ -29,13 +31,12 @@ int main(void)
 				divisors++;
 			}
 		}
+		if (divisors == 2)
+		{
+			largest_prime_factor = i;
+		}
 	}
-
-	if (divisors == 2)
-	{
-		largest_prime_factor = i;
-	}
-	printf("%ld", largest_prime_factor);
+	printf("%ld\n", largest_prime_factor);
 	return (0);
 }
 
