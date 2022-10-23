@@ -15,8 +15,8 @@ int main(void)
 	long int i;
 	int divisors;
 	int j;
-	long int largest_prime_number;
-	long int largest_prime_factor;
+	int largest_prime_number;
+	int largest_prime_factor;
 
 	long int num = 612852475143;
 
@@ -40,7 +40,7 @@ int main(void)
 
 		}
 	}
-	printf("%ld\n", largest_prime_factor);
+	printf("%d\n", largest_prime_factor);
 	return (0);
 }
 
