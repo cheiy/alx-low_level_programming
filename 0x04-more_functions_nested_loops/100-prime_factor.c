@@ -13,14 +13,13 @@
 int main(void)
 {
 	long int i;
-	int divisors;
-	int j;
-	int largest_prime_number;
-	int largest_prime_factor;
+	long int divisors, j, prime_number, a, factor, position;
+	int factors[500000];
 
 	long int num = 612852475143;
+	/*long int num = 123195200000;*/
 
-	for (i = 2; i <= num / 2; i++)
+	for (i = 4019; i <= num / 4019; i++)
 	{
 		divisors = 0;
 		for (j = 1; j <= i; j++)
@@ -32,15 +31,26 @@ int main(void)
 		}
 		if (divisors == 2)
 		{
-			largest_prime_number = i;
-			if (num % largest_prime_number == 0)
+			prime_number = i;
+			a = 0;
+			while (a < 500000)
 			{
-				largest_prime_factor = largest_prime_number;
+				if (num % prime_number == 0)
+				{
+					factors[a] = prime_number;
+				}
+				a++;
 			}
-
 		}
 	}
-	printf("%d\n", largest_prime_factor);
+	for (factor = 1; factor < 500000; factor++)
+	{
+		if (factors[factor] > factors[position])
+		{
+			position = factor;
+		}
+	}
+	printf("%d\n", factors[position]);
 	return (0);
 }
 
