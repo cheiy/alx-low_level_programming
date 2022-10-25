@@ -23,13 +23,11 @@ void print_rev(char *s)
 		s++;
 		count++;
 	}
-	length = count;
-	while (length >= 0)
+	length = 0;
+	while (length <= count)
 	{
 		_putchar(*s--);
-		length--;
+		length++;
 	}
-	_putchar('\n');
-
 }
 
