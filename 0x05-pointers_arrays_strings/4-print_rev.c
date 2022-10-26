@@ -24,6 +24,7 @@ void print_rev(char *s)
 		count++;
 	}
 	length = 0;
+	count--;
 	while (length <= count)
 	{
 		_putchar(*s--);
