@@ -24,6 +24,7 @@ void rev_string(char *s)
 	 * Loop through the array while swapping values to
 	 * temp char variable.
 	 */
+	size--;
 	while (begin < size)
 	{
 		tmp = s[begin];
