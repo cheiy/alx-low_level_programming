@@ -28,8 +28,8 @@ void puts2(char *str)
 		if (count % 2 == 0)
 		{
 			_putchar(tmp[count]);
-			count++;
 		}
+		count++;
 	}
 	_putchar('\n');
 }
