@@ -8,14 +8,12 @@
  */
 void puts_half(char *str)
 {
-	char *temp;
 	int count;
 	int half_of_string;
 
 	count = 0;
-	while (*temp != '\0')
+	while (str[count] != '\0')
 	{
-		temp = temp + 1;
 		count++;
 	}
 	if (count % 2 == 0)
@@ -30,7 +28,7 @@ void puts_half(char *str)
 	else
 	{
 		half_of_string = (count - 1) / 2;
-		/*half_of_string++;*/
+		half_of_string++;
 		while (str[half_of_string] != '\0')
 		{
 			_putchar(str[half_of_string]);
