@@ -22,7 +22,15 @@ void puts2(char *str)
 	while (tmp[count] != '\0')
 	{
 		_putchar(tmp[count]);
-		count = count + 2;
+		count = count + 1;
+	}
+	while (tmp[count] != '\0')
+	{
+		if (count % 2 == 0)
+		{
+			_putchar(tmp[count]);
+			count++;
+		}
 	}
 	_putchar('\n');
 }
