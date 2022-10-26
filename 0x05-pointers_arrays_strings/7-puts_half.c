@@ -10,14 +10,12 @@ void puts_half(char *str)
 {
 	char *temp;
 	int count;
-	int count_to_half;
 	int half_of_string;
 
-	temp = str;
 	count = 0;
 	while (*temp != '\0')
 	{
-		temp++;
+		temp = temp + 1;
 		count++;
 	}
 	if (count % 2 == 0)
