@@ -15,20 +15,18 @@ void print_rev(char *s)
 	 * Find the length of string first
 	 * Then run while loop in reverse
 	 */
-	int count, length;
+	int count;
 
 	count = 0;
-	while (*s != '\0')
+	while (s[count] != '\0')
 	{
-		s++;
 		count++;
 	}
-	length = 0;
 	count--;
-	while (length <= count)
+	while (count > 0)
 	{
-		_putchar(*s--);
-		length++;
+		_putchar(s[count]);
+		count--;
 	}
 	_putchar('\n');
 }
