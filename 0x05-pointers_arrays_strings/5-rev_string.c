@@ -9,22 +9,27 @@
  */
 void rev_string(char *s)
 {
-	int count1, count2;
-	char *str2;
+	int size;
+	char tmp;
+	int begin;
 
-	str2 = s;
-	count1 = 0;
-	count2 = 0;
-
-	while (s[count1] != '\0')
+	size = 0;
+	begin = 0;
+	/* Get the size of the array first */
+	while (s[size] != '\0')
 	{
-		count1++;
+		size = size + 1;
 	}
-	while (count1 >= 0)
+	/*
+	 * Loop through the array while swapping values to
+	 * temp char variable.
+	 */
+	while (begin < size)
 	{
-		str2[count1--] == s[count2++];
-		count1--;
+		tmp = s[begin];
+		s[begin] = s[size];
+		s[size] = tmp;
+		size--;
+		begin++;
 	}
 }
-
-
