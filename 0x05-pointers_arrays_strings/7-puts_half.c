@@ -30,7 +30,7 @@ void puts_half(char *str)
 	else
 	{
 		half_of_string = (count - 1) / 2;
-		half_of_string++;
+		/*half_of_string++;*/
 		while (str[half_of_string] != '\0')
 		{
 			_putchar(str[half_of_string]);
