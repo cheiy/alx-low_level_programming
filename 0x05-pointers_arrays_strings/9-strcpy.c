@@ -22,6 +22,10 @@ char *_strcpy(char *dest, char *src)
 	for (length = 0; length < size; length++)
 	{
 		dest[length] = src[length];
+		if (length > 0)
+		{
+			dest[size] = '\0';
+		}
 	}
 
 	return (dest);
