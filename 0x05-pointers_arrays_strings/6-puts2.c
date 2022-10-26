@@ -18,11 +18,6 @@ void puts2(char *str)
 	tmp = str;
 	count = 0;
 
-
-	while (tmp[count] != '\0')
-	{
-		count = count + 1;
-	}
 	while (tmp[count] != '\0')
 	{
 		if (count % 2 == 0)
