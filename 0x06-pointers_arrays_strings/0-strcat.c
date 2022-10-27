@@ -12,32 +12,27 @@
 char *_strcat(char *dest, char *src)
 {
 	char *ptr;
-	int len;
+	int len_dest;
+	int len_src;
 
-	len = 0;
-	/*
-	 * int len;
-	int count;
-
-	len = 0;
-	count = 0;
-	*/
+	len_dest = 0;
+	len_src = 0;
 
 	/*
 	 * First, find the length of the dest string
 	 */
-	while (*dest != '\0')
+	while (dest[len_dest] != '\0')
 	{
-		dest++;
+		len_dest++;
 	}
 	/*
 	 * Copy the contents of the src string to the dest string
 	 */
-	while (src[len] != '\0')
+	while (src[len_src] != '\0')
 	{
-		*dest = src[len];
-		len++;
-		dest++;
+		dest[len_dest] = src[len_src];
+		len_dest++;
+		len_src++;
 	}
 
 	ptr = dest;
