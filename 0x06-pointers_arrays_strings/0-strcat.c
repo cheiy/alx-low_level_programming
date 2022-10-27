@@ -12,7 +12,9 @@
 char *_strcat(char *dest, char *src)
 {
 	char *ptr;
+	int len;
 
+	len = 0;
 	/*
 	 * int len;
 	int count;
@@ -31,12 +33,13 @@ char *_strcat(char *dest, char *src)
 	/*
 	 * Copy the contents of the src string to the dest string
 	 */
-	while (*src != '\0')
+	while (src[len] != '\0')
 	{
-		dest = src;
+		*dest = src[len];
+		len++;
 		dest++;
-		src++;
 	}
+
 	ptr = dest;
 	return (ptr);
 }
