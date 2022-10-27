@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 /* 0x05*/
-
+int _atoi(char *s);
 
 char *_strcpy(char *dest, char *src);
 
