@@ -25,10 +25,7 @@ char *rot13(char *str)
 				str[len] = rot_encode[encode];
 				break;
 			}
-			else
-			{
-				encode++;
-			}
+			encode++;
 		}
 		encode = 0;
 		len++;
