@@ -9,6 +9,11 @@
  */
 void print_number(int n)
 {
+	if (n == INT_MIN)
+	{
+		_putchar('-');
+		n = -n * -1;
+	}
 	if (n < 0)
 	{
 		_putchar('-');
