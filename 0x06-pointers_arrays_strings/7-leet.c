@@ -25,10 +25,7 @@ char *leet(char *str)
 				str[len] = leet[count];
 				break;
 			}
-			else
-			{
-				count++;
-			}
+			count++;
 		}
 		count = 0;
 		len++;
