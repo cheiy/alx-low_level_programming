@@ -27,7 +27,7 @@ char *_strncpy(char *dest, char *src, int n)
 	/*
 	 * If the length of src is still less than n,
 	 * fill the rest of the buffer with null bytes.
-	 * */
+	 */
 	while (len < n)
 	{
 		dest[len] = '\0';
