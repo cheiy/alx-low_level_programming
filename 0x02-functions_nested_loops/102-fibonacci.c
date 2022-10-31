@@ -15,14 +15,17 @@ int main(void)
 
 	prev_2 = 0;
 	prev_1 = 1;
-
-	printf("%lu", prev_2);
-	printf(", %lu", prev_1);
-
 	for (i = 0; i < 50; i++)
 	{
 		fib = prev_1 + prev_2;
-		printf(", %lu", fib);
+		if (i < 49)
+		{
+			printf("%lu, ", fib);
+		}
+		else
+		{
+			printf("%lu", fib);
+		}
 		prev_2 = prev_1;
 		prev_1 = fib;
 	}
