@@ -27,4 +27,6 @@ int main(void)
 		prev_1 = fib;
 	}
 	printf("\n");
+
+	return (0);
 }
