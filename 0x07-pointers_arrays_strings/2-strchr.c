@@ -28,6 +28,7 @@ char *_strchr(char *s, char c)
 	}
 	if (c == '\0')
 	{
+		s = &s[count];
 		return (s);
 	}
 	return (NULL);
