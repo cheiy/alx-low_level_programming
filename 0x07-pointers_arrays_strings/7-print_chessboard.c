@@ -28,6 +28,7 @@ void print_chessboard(char (*a)[8])
 			}
 			col++;
 		}
+		col = 0;
 		row++;
 	}
 }
