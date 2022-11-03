@@ -12,12 +12,19 @@ int _strlen_recursion(char *s)
 {
 	int len;
 
-	if (*s != '\0')
+	if (*s != 0)
+	{
+		if (*s != '\0')
+		{
+			len = 0;
+			len++;
+			s++;
+			len += _strlen_recursion(s);
+		}
+	}
+	else
 	{
 		len = 0;
-		len++;
-		s++;
-		len += _strlen_recursion(s);
 	}
 	return (len);
 }
