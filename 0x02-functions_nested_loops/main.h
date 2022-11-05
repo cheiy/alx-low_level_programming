@@ -1,6 +1,6 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
-unsigned char _putchar(int ch);
+int  _putchar(char ch);
 
 void print_alphabet(void);
 
@@ -24,4 +24,5 @@ void times_table(void);
 
 int add(int, int);
 
+void print_times_table(int);
 #endif
