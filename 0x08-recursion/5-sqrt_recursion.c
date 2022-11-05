@@ -9,12 +9,37 @@
  */
 int _sqrt_recursion(int n)
 {
-	if ((n / 2 * n / 2) <= n && ((n / 2 + 1) * (n / 2 + 1)) > n)
+	int sqrt;
+	int divisor;
+	
+	divisor = 2;
+	if (n == 1)
 	{
-		return (n);
+		sqrt = 1;
 	}
-	else
+	if (n == 2 || n == -1)
 	{
-		return (_sqrt_recursion(n / 2 + 1));
+		sqrt = -1;
 	}
+	if ((n / divisor * n / divisor) > n)
+	{
+		if (n % 2 == 0)
+		{
+			divisor = divisor + 2;
+			if (n / divisor * n / divisor == n)
+			{
+				sqrt = n / divisor;
+			}
+			else 
+			{
+				sqrt=_sqrt_recursion(n/divisor);			
+			}
+		}
+		else
+		{
+			divisor++;
+			sqrt=_sqrt_recursion(n/divisor);
+		}
+	}
+	return (sqrt);
 }
