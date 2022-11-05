@@ -35,7 +35,14 @@ int main(int argc, char **argv)
 	else
 	{
 		change = atoi(argv[1]);
-		printf("%d\n", calc_change(change));
+		if (change < 0)
+		{
+			printf("0\n");
+		}
+		else
+		{
+			printf("%d\n", calc_change(change));
+		}
 	}
 	return (0);
 }
