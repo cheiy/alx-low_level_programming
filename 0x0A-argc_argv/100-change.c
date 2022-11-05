@@ -1,6 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
+ * calc_change - Recursive function to calculate coins needed per
+ * coin value.
+ * @a: Amount of change.
+ * Description: Recursive function to calculate coins needed per
+ * coin value.
+ *
+ * Return: Number of coins
+ */
+int calc_change(int a);
+
+/**
  * main - Program prints the minimum number of coins to make
  * change for an amount of money.
  * @argc: Number of arguments to our program
@@ -11,11 +22,11 @@
  *
  * Return: 0 if successful, 1 otherwise.
  */
-int calc_change(int a);
 
 int main(int argc, char **argv)
 {
 	int change;
+
 	if (argc != 2)
 	{
 		printf("Error\n");
@@ -24,14 +35,24 @@ int main(int argc, char **argv)
 	else
 	{
 		change = atoi(argv[1]);
-		calc_change(change);
+		printf("%d\n", calc_change(change));
 	}
 	return (0);
 }
+/**
+ * calc_change - Recursive function to calculate coins needed per
+ * coin value.
+ * @change: Amount of change.
+ *
+ * Description: Recursive function to calculate coins needed per
+ * coin value.
+ * Return: Number of coins
+ */
 int calc_change(int change)
 {
 	int coins;
 	int rem;
+
 	if (change >= 25)
 	{
 		coins = change / 25;
@@ -39,62 +60,58 @@ int calc_change(int change)
 		if (!rem)
 		{
 			coins = coins;
-			printf("%d\n", coins); 
 		}
 		else
-		{	
+		{
 			change = rem;
 			coins += calc_change(change);
 		}
 	}
-	if (change >= 10)
+	else if (change >= 10)
 	{
 		coins = change / 10;
 		rem = change % 10;
 		if (!rem)
 		{
 			coins = coins;
-			printf("%d\n", coins);
 		}
 		else
 		{
-			coins += calc_change(rem);
+			change = rem;
+			coins += calc_change(change);
 		}
 	}
-	if (change >= 5)
+	else if (change >= 5)
 	{
 		coins = change / 5;
 		rem = change %  5;
 		if (!rem)
 		{
 			coins = coins;
-			printf("%d\n", coins);
 		}
 		else
 		{
-			coins += calc_change(rem);
+			change = rem;
+			coins += calc_change(change);
 		}
 	}
-	if (change >= 2)
+	else if (change >= 2)
 	{
 		coins = change / 2;
 		rem = change % 2;
 		if (!rem)
 		{
 			coins = coins;
-			printf("%d\n", coins);
 		}
 		else
 		{
-		 	coins += calc_change(rem);
+			change = rem;
+			coins += calc_change(change);
 		}
 	}
-	if (change == 1)
+	else
 	{
 		coins = change / 1;
-		rem = change % 1;
-	       	coins += calc_change(rem);	
-		printf("%d\n", coins);
 	}
 	return (coins);
 }
