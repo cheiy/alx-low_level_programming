@@ -26,7 +26,7 @@ int main(int argc, char **argv)
 		i = 1;
 		while (i < argc)
 		{
-			if (atoi(argv[i]))
+			if (atoi(argv[i]) && atoi(argv[i]) > 0)
 			{
 				flag = 0;
 				sum += atoi(argv[i]);
