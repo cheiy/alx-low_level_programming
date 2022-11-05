@@ -19,8 +19,7 @@ int main(int argc, char **argv)
 	sum = 0;
 	if (argc < 2)
 	{
-		sum = 0;
-		printf("%d\n", sum);
+		printf("0\n");
 	}
 	else
 	{
