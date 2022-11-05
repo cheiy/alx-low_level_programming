@@ -19,24 +19,11 @@ int main(void)
 
 	while (i < 1024)
 	{
-		if (i % 3 == 0 && i % 5 == 0)
-		{
-			i++;
-		}
-		else if (i % 3 == 0)
+		if (i % 3 == 0 || i % 5 == 0)
 		{
 			sum += i;
-			i++;
 		}
-		else if (i % 5 == 0)
-		{
-			sum += i;
-			i++;
-		}
-		else
-		{
-			i++;
-		}
+		i++;
 	}
 	printf("%d\n", sum);
 	return (0);
