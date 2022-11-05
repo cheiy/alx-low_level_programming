@@ -11,7 +11,7 @@ int _sqrt_recursion(int n)
 {
 	int sqrt;
 	int divisor;
-	
+
 	divisor = 2;
 	if (n == 1)
 	{
@@ -30,15 +30,15 @@ int _sqrt_recursion(int n)
 			{
 				sqrt = n / divisor;
 			}
-			else 
+			else
 			{
-				sqrt=_sqrt_recursion(n/divisor);			
+				sqrt = _sqrt_recursion(n / divisor);
 			}
 		}
 		else
 		{
 			divisor++;
-			sqrt=_sqrt_recursion(n/divisor);
+			sqrt = _sqrt_recursion(n / divisor);
 		}
 	}
 	return (sqrt);
