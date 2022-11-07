@@ -5,7 +5,6 @@
  * @argc: Argument counter
  * @argv: Array of pointers to the arguments passed to main.
  *
- *
  * Description: Program prints its name followed by a new line.
  *
  * Return: 0 if run successfully, 1 otherwise.
