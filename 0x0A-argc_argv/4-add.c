@@ -16,7 +16,6 @@ int main(int argc, char **argv)
 	int sum;
 	int flag;
 
-	sum = 0;
 	if (argc < 2)
 	{
 		printf("0\n");
@@ -26,8 +25,9 @@ int main(int argc, char **argv)
 		i = 1;
 		while (i < argc)
 		{
-			if (atoi(argv[i]) && atoi(argv[i]) > 0)
+			if (atoi(argv[i]) > 0)
 			{
+				sum = 0;
 				flag = 0;
 				sum += atoi(argv[i]);
 			}
