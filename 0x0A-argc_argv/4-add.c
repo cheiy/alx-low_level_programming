@@ -22,12 +22,12 @@ int main(int argc, char **argv)
 	}
 	else
 	{
+		sum = 0;
 		i = 1;
 		while (i < argc)
 		{
 			if (atoi(argv[i]) > 0)
 			{
-				sum = 0;
 				flag = 0;
 				sum += atoi(argv[i]);
 			}
