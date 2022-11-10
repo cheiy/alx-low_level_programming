@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * free_grid - Function frees a 2 dimensional grid
  * previously created by alloc_grid function.
@@ -11,4 +12,5 @@
  */
 void free_grid(int **grid, int height)
 {
+	free(grid);
 }
