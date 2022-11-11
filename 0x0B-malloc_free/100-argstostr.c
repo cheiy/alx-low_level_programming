@@ -20,7 +20,6 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	}
 	j = i = len = 0;
-
 	while (j < ac)
 	{
 		while (av[j][i])
@@ -30,6 +29,7 @@ char *argstostr(int ac, char **av)
 		}
 		j++;
 	}
+	len += ac;
 	args_concat = (char *)malloc(sizeof(char) * len + 1);
 	if (args_concat == NULL)
 	{
