@@ -30,7 +30,7 @@ char *argstostr(int ac, char **av)
 		j++;
 	}
 	len += ac;
-	args_concat = (char *)malloc(sizeof(char) * len);
+	args_concat = (char *)malloc(sizeof(char) * len - 1);
 	if (args_concat == NULL)
 	{
 		return (NULL);
