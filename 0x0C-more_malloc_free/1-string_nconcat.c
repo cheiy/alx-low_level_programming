@@ -18,7 +18,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	i = len1 = len2 = total_len = j = 0;
 	if (s1 == NULL || s2 == NULL)
-		exit(-1);
+		exit(EXIT_FAILURE);
 	while (s1[len1] != '\0')
 	{
 		len1++;
@@ -28,14 +28,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		len2++;
 	}
 	if (n >= len2)
-	{
 		len2 = n;
-	}
-	else
-	{
-		len2 = len2;
-	}
 	total_len = len1 + len2;
+	/*new_string = malloc((total_len + 1) * sizeof *new_string);*/
 	new_string = malloc(total_len + 1);
 	if (new_string == NULL)
 		return (NULL);
