@@ -21,6 +21,8 @@ int *array_range(int min, int max)
 	if (range <= 0)
 		return (NULL);
 	arr = malloc(range * sizeof(range));
+	if (arr == NULL)
+		return (NULL);
 
 	i = 0;
 	while (i < range)
