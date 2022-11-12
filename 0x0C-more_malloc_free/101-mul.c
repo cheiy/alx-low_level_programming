@@ -1,11 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
-void print(
-
-
-
-
 /**
  * main - Program multiplies two positive numbers
  * @argc: Number of arguments passed to our program.
