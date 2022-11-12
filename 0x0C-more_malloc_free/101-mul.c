@@ -1,6 +1,11 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+void print(
+
+
+
+
 /**
  * main - Program multiplies two positive numbers
  * @argc: Number of arguments passed to our program.
@@ -12,20 +17,19 @@
  */
 int main(int argc, char *argv[])
 {
-	unsigned long long result;
-	unsigned long long num1;
-	unsigned long long num2;
+	unsigned int result;
+	unsigned int num1;
+	unsigned int num2;
 
 	if (argc < 3 || argc > 3)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-
-	num1 = atoll(argv[1]);
-	num2 = atoll(argv[2]);
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[2]);
 
 	result = num1 * num2;
-	printf("%llu\n", result);
+	printf("%d\n", result);
 	return (0);
 }
