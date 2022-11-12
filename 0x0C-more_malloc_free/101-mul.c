@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 #include <stdio.h>
 /**
  * main - Program multiplies two positive numbers
@@ -25,8 +26,6 @@ int main(int argc, char *argv[])
 	num2 = atoll(argv[2]);
 
 	result = num1 * num2;
-
 	printf("%llu\n", result);
-
 	return (0);
 }
