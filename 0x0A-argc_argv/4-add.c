@@ -12,10 +12,7 @@
  */
 int main(int argc, char **argv)
 {
-	int i;
-	int sum;
-	int flag;
-	int j;
+	int i, j, sum, flag;
 
 	if (argc < 2)
 	{
@@ -23,10 +20,8 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		sum = 0;
+		sum = flag = j = 0;
 		i = 1;
-		flag = 0;
-		j = 0;
 		while (i < argc)
 		{
 			while (argv[i][j])
