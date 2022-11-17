@@ -10,10 +10,10 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	if (name != NULL)
+	if (f == NULL || name == NULL)
 	{
-		f(name);
+		exit(EXIT_FAILURE);
 	}
 	else
-		exit(EXIT_FAILURE);
+		f(name);
 }
