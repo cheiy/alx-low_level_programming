@@ -16,7 +16,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 
 	if (n == 0)
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	i = 0;
 	va_start(arg_pointer, n);
 	while (i < n - 1)
