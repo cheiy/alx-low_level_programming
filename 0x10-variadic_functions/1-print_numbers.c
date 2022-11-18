@@ -15,19 +15,20 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_list arg_pointer;
 	unsigned int i;
 
-	if (n == 0)
-		exit(EXIT_SUCCESS);
-	i = 0;
-	va_start(arg_pointer, n);
-	while (i < n - 1)
+	if (n != 0)
 	{
-		if (separator != NULL)
-			printf("%d%s", va_arg(arg_pointer, int), separator);
-		else
-			printf("%d", va_arg(arg_pointer, int));
-		i++;
+		i = 0;
+		va_start(arg_pointer, n);
+		while (i < n - 1)
+		{
+			if (separator != NULL)
+				printf("%d%s", va_arg(arg_pointer, int), separator);
+			else
+				printf("%d", va_arg(arg_pointer, int));
+			i++;
+		}
+		printf("%d", va_arg(arg_pointer, int));
+		printf("\n");
+		va_end(arg_pointer);
 	}
-	printf("%d", va_arg(arg_pointer, int));
-	printf("\n");
-	va_end(arg_pointer);
 }
