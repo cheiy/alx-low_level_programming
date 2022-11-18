@@ -21,10 +21,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		va_start(arg_pointer, n);
 		while (i < n - 1)
 		{
-			if (separator != NULL)
-				printf("%d%s", va_arg(arg_pointer, int), separator);
-			else
+			if (separator == NULL)
 				printf("%d", va_arg(arg_pointer, int));
+			else
+				printf("%d%s", va_arg(arg_pointer, int), separator);
 			i++;
 		}
 		printf("%d", va_arg(arg_pointer, int));
