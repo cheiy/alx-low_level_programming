@@ -31,5 +31,6 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		va_end(arg_pointer);
 		printf("\n");
 	}
-	printf("\n");
+	else
+		printf("\n");
 }
