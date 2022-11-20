@@ -1,5 +1,6 @@
 #include "3-calc.h"
 #include <stdio.h>
+#include <string.h>
 
 /**
  * main - Our main Program
@@ -15,17 +16,21 @@ int main(int argc, char *argv[])
 	 * char *ch;
 	 */
 	int a, b;
-	int (*add_ptr)(int, int);
-	int result;
-
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
-	add_ptr = op_add;
-	result = add_ptr(a, b);
+	char *op;
 
 	if (argc < 4)
-		return (0);
-	printf("%d\n", result);
-
+	{
+		printf("Error\n");
+		exit(98);
+	}
+	a = atoi(argv[1]);
+	b = atoi(argv[3]);
+	op = argv[2];
+	if (*op != 43 && *op != 45 && *op != 42 && *op != 47 && *op != 37)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+	printf("%d\n", (*get_op_func(op))(a, b));
 	return (0);
 }
