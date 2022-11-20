@@ -4,21 +4,23 @@
  * print_all - Function prints anything.
  * @format: List of types of arguments passed to the function.
  * @...: Additional arguments.
- *
  * Description: Function prints anything.
- *
  * Return: Nothing.
  */
 void print_all(const char * const format, ...)
 {
 	va_list arg_ptr;
-	char ch, opt, *separator, *str;
+	char ch, opt, *separator;
 	int len;
-	float fl;
 
 	len = 0;
 	separator = ",";
 	va_start(arg_ptr, format);
+	while (format == NULL)
+	{
+		printf("\n");
+		exit(EXIT_FAILURE);
+	}
 	while (format[len])
 	{
 		opt = format[len];
@@ -32,12 +34,11 @@ void print_all(const char * const format, ...)
 				printf("%d", va_arg(arg_ptr, int));
 				break;
 			case 'f':
-				fl = va_arg(arg_ptr, double);
-				printf("%f", fl);
+				printf("%f", va_arg(arg_ptr, double));
 				break;
 			case 's':
-				str = va_arg(arg_ptr, char *);
-				printf("%s", str);
+				printf("%s", va_arg(arg_ptr, char *));
+				break;
 			default:
 				break;
 		}
