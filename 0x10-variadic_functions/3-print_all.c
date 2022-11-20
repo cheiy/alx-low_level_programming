@@ -12,32 +12,39 @@
 void print_all(const char * const format, ...)
 {
 	va_list arg_ptr;
-	char separator;
+	char ch, opt, *separator, *str;
+	int len;
+	float fl;
 
-	separator = ',';
-	va_arg(arg_ptr, format);
-	if (format == i || format == c || format == i || format == s)
+	len = 0;
+	separator = ",";
+	va_start(arg_ptr, format);
+	while (format[len])
 	{
-		while (i < 8)
+		opt = format[len];
+		switch (opt)
 		{
-			if (format == s && va_arg(arg_ptr, char *) == NULL)
-				printf("(nil)");
-			switch (format)
-			{
-			case c:
-				printf("%c%s", va_arg(arg_ptr, char), separator);
-			case i:
-				printf("%d%s", va_arg(arg_ptr, int), separator);
-			case f:
-				printf("%d%s", va_arg(arg_ptr, float), separator);
-			case s:
-				printf("%s%s", va_arg(arg_ptr, char *), separator);
+			case 'c':
+				ch = va_arg(arg_ptr, int);
+				printf("%c", ch);
+				break;
+			case 'i':
+				printf("%d", va_arg(arg_ptr, int));
+				break;
+			case 'f':
+				fl = va_arg(arg_ptr, double);
+				printf("%f", fl);
+				break;
+			case 's':
+				str = va_arg(arg_ptr, char *);
+				printf("%s", str);
 			default:
 				break;
-			}
-			i++;
 		}
+		if (len < 3 && (opt == 'c' || opt == 'i' || opt == 'f' || opt == 's'))
+			printf("%s ", separator);
+		len++;
 	}
-	printf("%\n");
+	printf("\n");
 	va_end(arg_ptr);
 }
