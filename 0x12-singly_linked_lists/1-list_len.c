@@ -10,15 +10,15 @@
 size_t list_len(const list_t *h)
 {
 	int elements;
+	const list_t *current;
 
 	elements = 0;
-	while (h->next != NULL)
+	current = malloc(sizeof(list_t));
+	current = h;
+	while (current != NULL)
 	{
-		if (h->str != NULL)
-			elements++;
-		if (h->len)
-			elements++;
-		h = h->next;
+		elements++;
+		current = current->next;
 	}
 	return (elements);
 }
