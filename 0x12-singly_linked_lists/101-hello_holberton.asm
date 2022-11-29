@@ -1,12 +1,17 @@
-	bits 64
+section .txt
+	default rel
+	extern printf
 	global main
-
-	section .txt
+	bits 64
 main:
-    extern printf
-    mov rdi, str
-    mov al,0
-    call printf
-ret
-str:
-    db `Hello, Holberton\n`,0
+	push rbp
+	mov rdi, message
+	mov rax, 0
+	call printf wrt ..plt 
+	pop rbp
+	mov rax,0        
+	ret
+
+section .data
+	message: db `Hello, Holberton\n`,0
+
