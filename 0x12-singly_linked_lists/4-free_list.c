@@ -7,7 +7,7 @@
  *
  * Return: Nothing.
  */
-void free_list(list_t *head);
+void free_list(list_t *head)
 {
 	free(head);
 }
