@@ -11,9 +11,8 @@ void free_list(list_t *head)
 {
 	list_t *temp_node;
 
-	if (head->next == NULL)
+	if (head == NULL)
 	{
-		free(head->str);
 		free(head);
 	}
 	else
