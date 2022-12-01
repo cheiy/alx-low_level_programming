@@ -10,23 +10,38 @@
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
-	unsigned int count;
+	unsigned int count, i;
 	listint_t *current_node;
 	listint_t *indexed_node;
 
+	i = 0;
 	count = 0;
 	if (head == NULL)
 		return (NULL);
-	current_node = head->next;
+	current_node = head;
 	while (current_node != NULL)
 	{
-		count++;
-		if (count == index)
-		{
-			indexed_node = current_node;
-			break;
-		}
 		current_node = current_node->next;
+		count++;
+	}
+	printf("Count is: %d\n", count);
+	if (index == 0)
+		indexed_node = head;
+	else
+	{
+		current_node = head;
+		while (current_node != NULL)
+		{
+			if (index == i)
+			{
+				indexed_node = current_node;
+				break;
+			}
+			else if (index > count)
+				return (NULL);
+			current_node = current_node->next;
+			i++;
+		}
 	}
 	return (indexed_node);
 }
