@@ -15,7 +15,10 @@ size_t print_listint(const listint_t *h)
 	i = 0;
 	current = h;
 	if (current == NULL)
-		exit(EXIT_FAILURE);
+	{
+		printf("%d\n", current->n);
+		i++;
+	}
 	while (current != NULL)
 	{
 		printf("%d\n", current->n);
