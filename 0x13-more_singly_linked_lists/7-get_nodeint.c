@@ -24,7 +24,6 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		current_node = current_node->next;
 		count++;
 	}
-	printf("Count is: %d\n", count);
 	if (index == 0)
 		indexed_node = head;
 	else
@@ -37,8 +36,14 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 				indexed_node = current_node;
 				break;
 			}
-			else if (index > count)
-				return (NULL);
+			else if (index > count - 1)
+			{
+				indexed_node = malloc(sizeof(listint_t));
+				if (indexed_node == NULL)
+					return (NULL);
+				indexed_node->next = NULL;
+				break;
+			}
 			current_node = current_node->next;
 			i++;
 		}
