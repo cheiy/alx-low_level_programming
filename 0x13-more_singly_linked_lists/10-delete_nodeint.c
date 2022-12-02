@@ -32,12 +32,13 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	else
 	{
 		current = *head;
-		while (current->next != NULL)
+		while (current != NULL)
 		{
 			if (index == i + 1)
 			{
 				temp = current->next;
 				current->next = current->next->next;
+				free(temp);
 				return (1);
 			}
 			else if (index > idx)
