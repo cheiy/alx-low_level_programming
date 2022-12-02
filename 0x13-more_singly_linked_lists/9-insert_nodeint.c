@@ -12,7 +12,7 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	unsigned int count, i;
-	listint_t *new_node, *current_node;
+	listint_t *new_node, *current_node, *temp_node;
 
 	count = i = 0;
 	new_node = malloc(sizeof(listint_t));
@@ -35,13 +35,13 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	else
 	{
 		current_node = *head;
-		while (current_node != NULL)
+		while (current_node->next != NULL)
 		{
-			if (idx == i - 1)
+			if (idx  == i + 1)
 			{
-				printf("Index same as i\n");
-				current_node = new_node;
-				break;
+				temp_node = current_node->next;
+				current_node->next = new_node;
+				new_node->next = temp_node;
 			}
 			else if (idx > count)
 				return (NULL);
@@ -49,5 +49,5 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			i++;
 		}
 	}
-	return (current_node);
+	return (new_node);
 }
