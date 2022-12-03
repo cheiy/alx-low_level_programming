@@ -15,7 +15,7 @@ void free_listint2(listint_t **head)
 	current_node = head;
 	if (!current_node)
 	{
-		printf("Freed!\n");
+		free(current_node);
 	}
 	else
 	{
