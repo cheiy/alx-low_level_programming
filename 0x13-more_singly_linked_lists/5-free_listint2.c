@@ -9,20 +9,22 @@
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *current_node;
+	listint_t **current_node;
+	listint_t *temp;
 
-	if (*head == NULL)
+	current_node = head;
+	if (!current_node)
 	{
-		exit(EXIT_SUCCESS);
+		printf("Freed!\n");
 	}
 	else
 	{
-		while (*head != NULL)
+		temp = *head;
+		while (temp != NULL)
 		{
-			current_node = (*head)->next;
+			temp = (*head)->next;
 			free(*head);
-			*head = current_node;
+			*head = temp;
 		}
 	}
-	(*head) = NULL;
 }
