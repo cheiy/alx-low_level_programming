@@ -12,18 +12,19 @@
 int pop_listint(listint_t **head)
 {
 	listint_t *temp_node;
-	/*int n;*/
+	listint_t *current_node;
+	int n;
 
-	temp_node = malloc(sizeof(listint_t));
-	if (temp_node == NULL)
-		exit(EXIT_FAILURE);
-	if (*head != NULL)
+	if (head == NULL || *head == NULL)
+		return (0);
+	current_node = *head;
+	if (current_node != NULL)
 	{
-		temp_node = *head;
-		temp_node->n = (*head)->n;
-		*head = (*head)->next;
-	/*	n = temp_node->n;*/
+		temp_node = current_node;
+		n = current_node->n;
+		current_node = current_node->next;
+		*head = current_node;
+		free(temp_node);
 	}
-	/*free(temp_node);*/
-	return (temp_node->n);
+	return (n);
 }
