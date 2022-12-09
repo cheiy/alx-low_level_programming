@@ -33,7 +33,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	close(fd);
 	while (buf[len] != '\0')
 	{
-		_putchar(buf[len]);
+		dprintf(STDOUT_FILENO, "%c", buf[len]);
 		len++;
 		num++;
 	}
