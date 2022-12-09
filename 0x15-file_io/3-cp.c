@@ -52,7 +52,6 @@ int main(int argc, char *argv[])
 		while (src_content[len] != '\0')
 		{
 			dprintf(fd_dst, "%c", src_content[len]);
-			dprintf(STDOUT_FILENO, "%c", src_content[len]);
 			len++;
 		}
 		close_src = close(fd_src);
