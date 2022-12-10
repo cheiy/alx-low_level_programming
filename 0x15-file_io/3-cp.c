@@ -16,7 +16,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd_src, fd_dst, close_src, close_dst, read_retval, write_retval;
+	int fd_src, fd_dst, close_src, close_dst, re, wr;
 	char *error_src, *error_dst, *src_content;
 	unsigned int len, len2;
 
@@ -37,15 +37,15 @@ int main(int argc, char *argv[])
 		src_content = malloc(sizeof(char) * len);
 		if (src_content == NULL)
 			return (-1);
-		read_retval = read(fd_src, src_content, len);
-		if (read_retval == 98)
-			dprintf(STDERR_FILENO, "%s%s\n", error_src, argv[1]), exit(98);
+		re = read(fd_src, src_content, len);
+		if (re == -1)
+			dprintf(STDERR_FILENO, "%s%s\n", error_src, argv[1]), exit(-1);
 		src_content[len + 1] = '\0';
 		while (src_content[len2] != '\0')
 		{
-			write_retval = dprintf(fd_dst, "%c", src_content[len2]);
-			if (write_retval < 0)
-				dprintf(STDERR_FILENO, "%s%s\n", error_dst, argv[2]), exit(99);
+			wr = dprintf(fd_dst, "%c", src_content[len2]);
+			if (wr < 0)
+				dprintf(STDERR_FILENO, "%s%s\n", error_dst, argv[2]), exit(wr);
 			len2++;
 		}
 		close_src = close(fd_src), close_dst = close(fd_dst);
