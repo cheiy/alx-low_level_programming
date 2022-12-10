@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 		src_content[len + 1] = '\0';
 		wr = dprintf(fd_dst, "%s", src_content);
 		if (wr < 0)
-			dprintf(STDERR_FILENO, "%s%s\n", error_dst, argv[1]), exit(99);
+			dprintf(STDERR_FILENO, "%s%s\n", error_dst, argv[2]), exit(99);
 		close_src = close(fd_src), close_dst = close(fd_dst);
 		if (close_src != 0)
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd_src), exit(100);
