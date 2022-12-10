@@ -18,58 +18,41 @@ int main(int argc, char *argv[])
 {
 	int fd_src, fd_dst, close_src, close_dst, read_retval, write_retval;
 	char *error_src, *error_dst, *src_content;
-	unsigned int len;
+	unsigned int len, len2;
 
-	len = 0;
+	len = len2 = 0;
 	error_src = "Error: Can't read from file ";
 	error_dst = "Error: Can't write to ";
 	if (argc != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 	else
 	{
 		fd_src = open(argv[1], O_RDONLY);
 		fd_dst = open(argv[2], O_CREAT | O_WRONLY, 0664);
 		if (fd_src < 0)
-		{
-			dprintf(STDERR_FILENO, "%s%s\n", error_src, argv[1]);
-			exit(98);
-		}
+			dprintf(STDERR_FILENO, "%s%s\n", error_src, argv[1]), exit(98);
 		if (fd_dst < 0)
-		{
-			dprintf(STDERR_FILENO, "%s%s\n", error_dst, argv[2]);
-			exit(99);
-		}
+			dprintf(STDERR_FILENO, "%s%s\n", error_dst, argv[2]), exit(99);
 		len = str_len(argv[1]);
 		src_content = malloc(sizeof(char) * len);
 		if (src_content == NULL)
 			return (-1);
 		read_retval = read(fd_src, src_content, len);
 		if (read_retval == -1)
-			exit(read_retval);
+			return (read_retval);
 		src_content[len + 1] = '\0';
-		len = 0;
-		while (src_content[len] != '\0')
+		while (src_content[len2] != '\0')
 		{
-			write_retval = dprintf(fd_dst, "%c", src_content[len]);
+			write_retval = dprintf(fd_dst, "%c", src_content[len2]);
 			if (write_retval < 0)
 				return (write_retval);
-			len++;
+			len2++;
 		}
-		close_src = close(fd_src);
-		close_dst = close(fd_dst);
+		close_src = close(fd_src), close_dst = close(fd_dst);
 		if (close_src != 0)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd_src);
-			exit(100);
-		}
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd_src), exit(100);
 		if (close_dst != 0)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd_dst);
-			exit(100);
-		}
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd_dst), exit(100);
 		free(src_content);
 		return (0);
 	}
