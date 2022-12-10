@@ -34,13 +34,13 @@ int main(int argc, char *argv[])
 		fd_dst = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
 		if (fd_src < 0)
 		{
-			dprintf(STDERR_FILENO, "%s%s\n", error_src, argv[1]);
 			exit(98);
+			dprintf(STDERR_FILENO, "%s%s\n", error_src, argv[1]);
 		}
 		if (fd_dst < 0)
 		{
-			dprintf(STDERR_FILENO, "%s%s\n", error_dst, argv[2]);
 			exit(99);
+			dprintf(STDERR_FILENO, "%s%s\n", error_dst, argv[2]);
 		}
 		len = str_len(argv[1]);
 		src_content = malloc(sizeof(char) * len);
@@ -63,7 +63,7 @@ int main(int argc, char *argv[])
 		}
 		if (close_dst != 0)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't close f %d", fd_dst);
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd_dst);
 			exit(100);
 		}
 		free(src_content);
