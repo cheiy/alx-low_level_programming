@@ -16,9 +16,9 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd_src, fd_dst, close_src, close_dst;
+	int fd_src, fd_dst, close_src, close_dst, read_retval, write_retval;
 	char *error_src, *error_dst, *src_content;
-	unsigned int len, read_retval, write_retval;
+	unsigned int len;
 
 	len = 0;
 	error_src = "Error: Can't read from file ";
