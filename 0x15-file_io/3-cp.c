@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 {
 	int fd_src, fd_dst, close_src, close_dst;
 	char *error_src, *error_dst, *src_content;
-	unsigned int len;
+	unsigned int len, read_retval, write_retval;
 
 	len = 0;
 	error_src = "Error: Can't read from file ";
@@ -46,12 +46,16 @@ int main(int argc, char *argv[])
 		src_content = malloc(sizeof(char) * len);
 		if (src_content == NULL)
 			return (-1);
-		read(fd_src, src_content, len);
+		read_retval = read(fd_src, src_content, len);
+		if (read_retval == -1)
+			exit(read_retval);
 		src_content[len + 1] = '\0';
 		len = 0;
 		while (src_content[len] != '\0')
 		{
-			dprintf(fd_dst, "%c", src_content[len]);
+			write_retval = dprintf(fd_dst, "%c", src_content[len]);
+			if (write_retval < 0)
+				return (write_retval);
 			len++;
 		}
 		close_src = close(fd_src);
