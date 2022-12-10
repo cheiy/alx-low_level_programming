@@ -41,13 +41,9 @@ int main(int argc, char *argv[])
 		if (re == -1)
 			dprintf(STDERR_FILENO, "%s%s\n", error_src, argv[1]), exit(98);
 		src_content[len + 1] = '\0';
-		while (src_content[len2] != '\0')
-		{
-			wr = dprintf(fd_dst, "%c", src_content[len2]);
-			if (wr < 0)
-				dprintf(STDERR_FILENO, "%s%s\n", error_dst, argv[2]), exit(99);
-			len2++;
-		}
+		wr = dprintf(fd_dst, "%s", src_content);
+		if (wr < 0)
+			dprintf(STDERR_FILENO, "%s%s\n", error_dst, argv[1]), exit(99);
 		close_src = close(fd_src), close_dst = close(fd_dst);
 		if (close_src != 0)
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd_src), exit(100);
