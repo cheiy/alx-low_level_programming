@@ -34,13 +34,13 @@ int main(int argc, char *argv[])
 		fd_dst = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
 		if (fd_src < 0)
 		{
-			exit(98);
 			dprintf(STDERR_FILENO, "%s%s\n", error_src, argv[1]);
+			exit(98);
 		}
 		if (fd_dst < 0)
 		{
-			exit(99);
 			dprintf(STDERR_FILENO, "%s%s\n", error_dst, argv[2]);
+			exit(99);
 		}
 		len = str_len(argv[1]);
 		src_content = malloc(sizeof(char) * len);
