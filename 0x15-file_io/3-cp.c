@@ -38,14 +38,14 @@ int main(int argc, char *argv[])
 		if (src_content == NULL)
 			return (-1);
 		read_retval = read(fd_src, src_content, len);
-		if (read_retval == -1)
-			return (read_retval);
+		if (read_retval == 98)
+			dprintf(STDERR_FILENO, "%s%s\n", error_src, argv[1]), exit(98);
 		src_content[len + 1] = '\0';
 		while (src_content[len2] != '\0')
 		{
 			write_retval = dprintf(fd_dst, "%c", src_content[len2]);
 			if (write_retval < 0)
-				return (write_retval);
+				dprintf(STDERR_FILENO, "%s%s\n", error_dst, argv[2]), exit(99);
 			len2++;
 		}
 		close_src = close(fd_src), close_dst = close(fd_dst);
