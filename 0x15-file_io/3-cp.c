@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 		len = str_len(argv[1]);
 		src_content = malloc(sizeof(char) * len);
 		if (src_content == NULL)
-			return (-1);
+			dprintf(STDERR_FILENO, "%s%s\n", error_dst, argv[2]), exit(99);
 		re = read(fd_src, src_content, len);
 		if (re == -1)
 			dprintf(STDERR_FILENO, "%s%s\n", error_src, argv[1]), exit(98);
