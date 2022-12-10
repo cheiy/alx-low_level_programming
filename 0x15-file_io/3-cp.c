@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 	else
 	{
 		fd_src = open(argv[1], O_RDONLY);
-		fd_dst = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+		fd_dst = open(argv[2], O_CREAT | O_WRONLY, 0664);
 		if (fd_src < 0)
 		{
 			dprintf(STDERR_FILENO, "%s%s\n", error_src, argv[1]);
