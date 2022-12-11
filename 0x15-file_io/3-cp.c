@@ -16,11 +16,10 @@
  */
 int main(int argc, char *argv[])
 {
-	int fd_src, fd_dst, close_src, close_dst, re, wr;
-	char *error_src, *error_dst, *src_content;
-	unsigned int len, len2;
+	int fd_src, fd_dst, close_src, close_dst, len, len2;
+	char *error_src, *error_dst, buf[1024];
 
-	len = len2 = 0;
+	len = 1024, len2 = 0;
 	error_src = "Error: Can't read from file ";
 	error_dst = "Error: Can't write to ";
 	if (argc != 3)
@@ -33,26 +32,20 @@ int main(int argc, char *argv[])
 			dprintf(STDERR_FILENO, "%s%s\n", error_src, argv[1]), exit(98);
 		if (fd_dst < 0)
 			dprintf(STDERR_FILENO, "%s%s\n", error_dst, argv[2]), exit(99);
-		len = str_len(argv[1]);
-		src_content = malloc(sizeof(char) * len);
-		if (src_content == NULL)
-			return (-1);
-		re = read(fd_src, src_content, len);
-		if (re == -1)
-			dprintf(STDERR_FILENO, "%s%s\n", error_src, argv[1]), exit(98);
-		src_content[len + 1] = '\0';
-		wr = dprintf(fd_dst, "%s", src_content);
-		if (wr < 0)
+		while (len == 1024)
 		{
-			free(src_content);
-			dprintf(STDERR_FILENO, "%s%s\n", error_dst, argv[2]), exit(99);
+			len = read(fd_src, buf, 1024);
+			if (len == -1)
+				dprintf(STDERR_FILENO, "%s%s\n", error_src, argv[1]), exit(98);
+			len2 = write(fd_dst, buf, len);
+			if (len2 < len)
+				dprintf(STDERR_FILENO, "%s%s\n", error_dst, argv[2]), exit(99);
 		}
 		close_src = close(fd_src), close_dst = close(fd_dst);
 		if (close_src != 0)
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd_src), exit(100);
 		if (close_dst != 0)
 			dprintf(STDERR_FILENO, "Error: Can't close fd %d", fd_dst), exit(100);
-		free(src_content);
 		return (0);
 	}
 }
