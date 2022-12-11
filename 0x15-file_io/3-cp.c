@@ -65,13 +65,10 @@ int main(int argc, char *argv[])
  */
 unsigned int str_len(char str[])
 {
+	struct stat file_status;
 	unsigned int len;
-	int fd;
 
-	len = 0;
-	fd = open(str, O_RDONLY);
-	if (fd < 0)
-		exit(EXIT_FAILURE);
-	len = lseek(fd, 0L, SEEK_END);
+	stat(str, &file_status);
+	len = file_status.st_size;
 	return (len);
 }
