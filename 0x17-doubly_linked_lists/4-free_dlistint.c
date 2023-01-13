@@ -6,17 +6,18 @@
  * Description: Function frees a dlistint_t list.
  * Return: Nothing.
  */
-void free_dlistint(dlistint_t *head)
+int free_dlistint(dlistint_t *head)
 {
 	dlistint_t *current, *temp;
+	int retval;
 
 	if (head == NULL)
-	{
-		printf("Freed!\n");
-		exit(0);
-	}
+		return (0);
 	if (head->next == NULL)
+	{
 		free(head);
+		return (0);
+	}
 	else
 	{
 		current = head;
@@ -27,5 +28,7 @@ void free_dlistint(dlistint_t *head)
 			current = temp;
 		}
 		free(current);
+		retval = 0;
 	}
+	return (retval);
 }
