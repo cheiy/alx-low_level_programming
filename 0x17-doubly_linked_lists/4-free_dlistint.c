@@ -10,6 +10,8 @@ void free_dlistint(dlistint_t *head)
 {
 	dlistint_t *current, *temp;
 
+	if (head == NULL)
+		exit(0);
 	if (head->next == NULL)
 		free(head);
 	else
