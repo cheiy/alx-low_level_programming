@@ -1,6 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
-
+#include <stdlib.h>
 #include <stdio.h>
 /* 0x07 */
 char *_memset(char *, char b, unsigned int n);
