@@ -1,0 +1,4 @@
+CC=gcc
+CLAGS=-Wall -Werror -Wextra -pedantic -std=gnu89
+all:	school
+school:	m.h	main.c	school.c
