@@ -15,6 +15,7 @@ int binary_search(int *array, size_t size, int value)
 	size_t mid_item, first_item, last_item, i;
 
 	last_item = size - 1;
+	i = 0;
 	if (array == NULL)
 		return (-1);
 	while (first_item <= last_item)
